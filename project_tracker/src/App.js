@@ -5,6 +5,8 @@ export default class App extends Component {
     return (
       <div>
         Welcome to the Project 3 Tracking App
+
+        < NewTask />
       </div>
     )
   }
