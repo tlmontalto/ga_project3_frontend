@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+const baseURL = 'http://localhost:3003'
 export default class NewTask extends Component {
     constructor(props) {
         super(props)
@@ -14,6 +15,26 @@ export default class NewTask extends Component {
     handleChange = (event) => {
         this.setState({ [event.currentTarget.id]: event.currentTarget.value })
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        fetch(baseURL + '/tasks', {
+          method: 'POST',
+          body: JSON.stringify({ name: this.state.name }, { dueDate: this.state.dueDate}, { description: this.state.description }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then(res => res.json())
+          .then(resJson => {
+            this.props.handleAddTasks(resJson)
+            this.setState({
+              name: '',
+              dueDate: '',
+              description: ''
+            })
+          })
+          .catch(error => console.log({ 'Error': error }))
+      }
 
     render() {
         return (
