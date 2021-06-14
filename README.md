@@ -3,3 +3,6 @@
 ## Group Members:
 
 Troy Bankerd
+John Diket
+Ryan Wire
+Tamir Montalto
