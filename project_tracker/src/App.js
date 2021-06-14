@@ -50,7 +50,12 @@ export default class App extends Component {
         Welcome to the Project 3 Tracking App
 
         < NewTask handleAddTask={ this.handleAddTask } />
-        < Tasks />
+        <div className="container task-board">
+          { this.state.tasks.map((task, id) => {
+            return < Tasks task={task} key={id} taskId={id} />
+          })}
+          
+        </div>
         
       </div>
     )
