@@ -3,6 +3,8 @@ import NewTask from './components/NewTask'
 import Tasks from './components/Tasks'
 
 const baseURL = 'http://localhost:3003'
+
+
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -10,6 +12,8 @@ export default class App extends Component {
     this.state = {
       tasks: []
     }
+
+    console.log(this.state.tasks)
   }
 
   getTasks = () => {
@@ -44,15 +48,20 @@ export default class App extends Component {
     })
   }
 
+  
+
   render() {
     return (
       <div>
         Welcome to the Project 3 Tracking App
 
         < NewTask handleAddTask={ this.handleAddTask } />
+
+
+
         <div className="container task-board">
-          { this.state.tasks.map((task, id) => {
-            return < Tasks task={task} key={id} taskId={id} />
+          { this.state.tasks.map(task => {
+            return <h3 key={task._id} >{task.name}</h3>
           })}
           
         </div>
