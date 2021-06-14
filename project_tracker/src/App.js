@@ -57,8 +57,6 @@ export default class App extends Component {
 
         < NewTask handleAddTask={ this.handleAddTask } />
 
-
-
         <div className="container task-board">
           { this.state.tasks.map(task => {
             return <h3 key={task._id} >{task.name}</h3>
