@@ -5,9 +5,9 @@ export default class NewTask extends Component {
         super(props)
 
         this.state = {
-            name: "",
-            dueDate: "",
-            description: ""
+            name: '',
+            dueDate: '',
+            description: ''
         }
     }
 
