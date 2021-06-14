@@ -11,18 +11,22 @@ export default class NewTask extends Component {
         }
     }
 
+    handleChange = (event) => {
+        this.setState({ [event.currentTarget.id]: event.currentTarget.value })
+    }
+
     render() {
         return (
             <div>
                 <form>
                     <label htmlFor="name"></label>
-                    <input type="text" id="name" name="name" placeholder="Name" />
+                    <input type="text" id="name" name="name" placeholder="Name" onChange={this.handleChange} value={this.state.name} />
 
                     <label htmlFor="date"></label>
-                    <input type="text" id="duedate" name="duedate" placeholder="Due Date"/>
+                    <input type="text" id="duedate" name="duedate" placeholder="Due Date" onChange={this.handleChange} value={this.state.dueDate} />
 
                     <label htmlFor="description"></label>
-                    <input type="text" id="description" name="description" placeholder="Description" />
+                    <input type="text" id="description" name="description" placeholder="Description" onChange={this.handleChange} value={this.state.description} />
 
                     <input type="submit" value="Add Task"/>
 
