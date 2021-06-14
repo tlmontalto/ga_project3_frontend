@@ -16,7 +16,7 @@ export default class NewTask extends Component {
         this.setState({ [event.currentTarget.id]: event.currentTarget.value })
     }
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault()
         fetch(baseURL + '/tasks', {
           method: 'POST',
