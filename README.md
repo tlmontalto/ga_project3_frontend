@@ -2,3 +2,6 @@
 
 ### Team Members
 - John Diket
+## Group Members:
+
+Troy Bankerd
