@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NewSubTask from './NewSubTask'
+import SubTask from './SubTask'
 
 export default class Tasks extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ export default class Tasks extends Component {
     render() {
         return (
             <div>
-                {/* < SubTasks /> */}
+                < SubTask />
                 < NewSubTask />
             </div>
         )
