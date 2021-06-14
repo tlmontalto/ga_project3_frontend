@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import NewTask from './components/NewTask'
 
 export default class App extends Component {
   render() {

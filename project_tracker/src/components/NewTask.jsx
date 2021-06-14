@@ -6,15 +6,15 @@ export default class NewTask extends Component {
             <div>
                 <form>
                     <label htmlFor="name"></label>
-                    <input type="text" id="name" name="name" />
+                    <input type="text" id="name" name="name" placeholder="Name" />
 
                     <label htmlFor="date"></label>
-                    <input type="text" id="date" name="date" />
+                    <input type="text" id="date" name="date" placeholder="Date"/>
 
                     <label htmlFor="description"></label>
-                    <input type="text" id="description" name="description" />
+                    <input type="text" id="description" name="description" placeholder="Description" />
 
-                    <input type="submit">Add Task</input>
+                    <input type="submit" value="Add Task"/>
 
                 </form>
             </div>
