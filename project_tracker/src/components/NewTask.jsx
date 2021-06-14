@@ -22,8 +22,8 @@ export default class NewTask extends Component {
                     <label htmlFor="name"></label>
                     <input type="text" id="name" name="name" placeholder="Name" onChange={this.handleChange} value={this.state.name} />
 
-                    <label htmlFor="duedate"></label>
-                    <input type="text" id="duedate" name="duedate" placeholder="Due Date" onChange={this.handleChange} value={this.state.dueDate} />
+                    <label htmlFor="dueDate"></label>
+                    <input type="text" id="dueDate" name="dueDate" placeholder="Due Date" onChange={this.handleChange} value={this.state.dueDate} />
 
                     <label htmlFor="description"></label>
                     <input type="text" id="description" name="description" placeholder="Description" onChange={this.handleChange} value={this.state.description} />
