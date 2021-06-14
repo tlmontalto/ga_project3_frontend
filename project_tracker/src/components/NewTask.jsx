@@ -20,13 +20,18 @@ export default class NewTask extends Component {
         event.preventDefault()
         fetch(baseURL + '/tasks', {
           method: 'POST',
-          body: JSON.stringify({ name: this.state.name }, { dueDate: this.state.dueDate}, { description: this.state.description }),
+          body: JSON.stringify({
+              name: this.state.name,
+              dateDue: this.state.dueDate,
+              description: this.state.description
+          }),
           headers: {
             'Content-Type': 'application/json'
           }
         }).then(res => res.json())
           .then(resJson => {
-            this.props.handleAddTasks(resJson)
+            //   console.log(resJson)
+            this.props.handleAddTask(resJson)
             this.setState({
               name: '',
               dueDate: '',
@@ -39,7 +44,7 @@ export default class NewTask extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={ this.handleSubmit }>
                     <label htmlFor="name"></label>
                     <input type="text" id="name" name="name" placeholder="Name" onChange={this.handleChange} value={this.state.name} />
 
