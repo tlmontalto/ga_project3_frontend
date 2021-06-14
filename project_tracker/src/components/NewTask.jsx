@@ -39,7 +39,7 @@ export default class NewTask extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={ this.handleSubmit }>
                     <label htmlFor="name"></label>
                     <input type="text" id="name" name="name" placeholder="Name" onChange={this.handleChange} value={this.state.name} />
 
