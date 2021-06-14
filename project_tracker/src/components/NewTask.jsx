@@ -4,7 +4,7 @@ export default class NewTask extends Component {
     constructor(props) {
         super(props)
 
-        this.state={
+        this.state = {
             name: "",
             dueDate: "",
             description: ""
