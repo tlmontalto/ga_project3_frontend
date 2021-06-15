@@ -8,7 +8,15 @@ export default class NewSubTask extends Component {
         this.state = {
             name: '',
             description: '',
-            completed: false
+            completed: false,
+            getTasks(){
+                fetch(baseURL + '/tasks')
+                  .then(data => {return data.json()}, err => console.log(err))
+                  .then(parsedData => this.setState({ tasks: parsedData }), err => console.log(err))
+              },
+              componentDidMount() {
+                this.getTasks()
+              }
         }
     }
 
@@ -17,6 +25,29 @@ export default class NewSubTask extends Component {
     }
 
     // handleSubmit method will go here.  It needs to connect to the object of the Task it appears on, send a fetch to that object to create a new object within the subtask Array.
+    
+    updateTasks(tasks) {
+        fetch(baseURL + '/tasks/' + tasks._id, {
+          method:'PUT',
+          body: JSON.stringify({
+            name: tasks.name,
+            dueDate: tasks.dueDate,
+            description: tasks.description
+          }),
+          headers: {'Content-Type' : 'application/json'}
+        })
+        .then(res=>res.json())
+        .then(resJson => {
+          const copyTasks = [...this.state.tasks];
+          const findIndex = this.state.tasks.findIndex(tasks => tasks._id === resJson._id)
+          copyTasks[findIndex].name = resJson.name
+          copyTasks[findIndex].dueDate = resJson.dueDate
+          copyTasks[findIndex].description = resJson.description
+          this.setState({tasks: copyTasks})
+        })
+    
+        this.setState({ showUpdate: false })
+    }
 
     render() {
         return (
