@@ -25,6 +25,7 @@ export default class Tasks extends Component {
                     })}
                 </div>
                 
+                <button onClick={(event) => {this.props.deleteTask(this.props.task._id)}}>X</button>
             </div>
         )
     }
