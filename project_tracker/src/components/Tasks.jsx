@@ -13,9 +13,19 @@ export default class Tasks extends Component {
 
     render() {
         return (
-            <div>
-                < SubTask />
+            <div key={this.props.task._id}>
+                <h3>{this.props.task.name}</h3>
+                <h3>{this.props.task.dueDate}</h3>
+                <h3>{this.props.task.description}</h3>
+                
                 < NewSubTask />
+                <div className="sub-list">
+                    { this.props.task.subTask.map(subtask => {
+                        return (< SubTask subtask={subtask} />)
+                    })}
+                </div>
+                
+                <button onClick={(event) => {this.props.deleteTask(this.props.task._id)}}>X</button>
             </div>
         )
     }
