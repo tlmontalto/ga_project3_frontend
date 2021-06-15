@@ -4,6 +4,16 @@ import Tasks from './components/Tasks'
 
 const baseURL = 'http://localhost:3003'
 
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:3003';
+} else {
+  // "https://fathomless-sierra-68956.herokuapp.com" in this case is the *API* url
+  baseURL = 'https://task-backend-project3.herokuapp.com';
+}
+
+console.log('current base URL:', baseURL)
 
 export default class App extends Component {
   constructor(props) {
