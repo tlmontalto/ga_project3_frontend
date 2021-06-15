@@ -40,19 +40,31 @@ export default class Tasks extends Component {
 
     render() {
         return (
-            <div key={this.props.task._id}>
-                <h3>{this.props.task.name}</h3>
-                <h3>{this.props.task.dueDate}</h3>
-                <h3>{this.props.task.description}</h3>
-                
-                < NewSubTask />
-                <div className="sub-list">
-                    { this.props.task.subTask.map(subtask => {
-                        return (< SubTask subtask={subtask} />)
-                    })}
+            <div className="container">
+                <div key={this.props.task._id}>
+                    <div className="main-task row">
+                        <div className="col-md-10 mt-3">
+                            <div className="row my-3 d-flex justify-content-center">
+                                <p className="col-6 fs-4">{this.props.task.name}</p>
+                                <p className="col-4 fs-4">{this.props.task.dueDate}</p>
+                            </div>
+                            <div className="row my-3 d-flex justify-content-center">
+                                <p className="col-10 fs-4">{this.props.task.description}</p>    
+                            </div>
+                        </div>
+                        <div className="col-1 d-flex align-items-center">
+                            <button className="btn btn-danger btn-lg" onClick={(event) => {this.props.deleteTask(this.props.task._id)}}>X</button>
+                        </div>
+                    </div>
+                    
+                    < NewSubTask id={this.props.task._id} />
+                    <div className="sub-list">
+                        { this.props.task.subTask.map(subtask => {
+                            return (< SubTask subtask={subtask}  />)
+                        })}
+                    </div>
+                    
                 </div>
-                
-                <button onClick={(event) => {this.props.deleteTask(this.props.task._id)}}>X</button>
             </div>
         )
     }
