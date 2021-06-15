@@ -51,7 +51,8 @@ export default class NewSubTask extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <div className="form-group">
                 <form onSubmit={ this.handleSubmit }>
                     <label htmlFor="name">Name</label>
                     <input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} />
@@ -59,11 +60,12 @@ export default class NewSubTask extends Component {
                     <label htmlFor="description">Description</label>
                     <input type="text" id="description" name="description" onChange={this.handleChange} value={this.state.description} />
 
-                    <label htmlFor="completed">Completed?</label>
-                    <input type="checkbox" id="completed" name="completed" onChange={this.handleChange} />
+                    {/* <label htmlFor="completed">Completed?</label>
+                    <input type="checkbox" id="completed" name="completed" onChange={this.handleChange} /> */}
 
                     <input type="submit" />
                 </form>
+                </div>
             </div>
         )
     }
