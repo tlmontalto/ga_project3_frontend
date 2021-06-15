@@ -22,7 +22,7 @@ export default class NewTask extends Component {
           method: 'POST',
           body: JSON.stringify({
               name: this.state.name,
-              dateDue: this.state.dueDate,
+              dueDate: this.state.dueDate,
               description: this.state.description
           }),
           headers: {

@@ -31,7 +31,7 @@ export default class App extends Component {
     copyTasks.unshift(task)
     this.setState({
       tasks: copyTasks,
-      name: ''
+      name: '',
     })
   }
 
