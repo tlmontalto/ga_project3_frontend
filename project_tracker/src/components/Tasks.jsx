@@ -15,7 +15,6 @@ export default class Tasks extends Component {
         return (
             <div>
                 < SubTask />
-                < NewSubTask />
             </div>
         )
     }
