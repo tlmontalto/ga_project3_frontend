@@ -65,6 +65,7 @@ export default class App extends Component {
                 {/* Why does it only work with dateDue when in every other spot it is dueDate? */}
                 <h3>{task.dateDue}</h3>
                 <h3>{task.description}</h3>
+                < Tasks />
               </div>
           )})}
           
