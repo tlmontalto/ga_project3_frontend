@@ -60,7 +60,9 @@ export default class App extends Component {
         <div className="container task-board">
           { this.state.tasks.map(task => {
             return (
+
               < Tasks task={task} />
+
           )})}
           
         </div>
