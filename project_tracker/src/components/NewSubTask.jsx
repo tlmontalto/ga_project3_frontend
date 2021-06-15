@@ -53,18 +53,32 @@ export default class NewSubTask extends Component {
         return (
             <div className="container">
                 <div className="form-group">
-                <form onSubmit={ this.handleSubmit }>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} />
+                    <form onSubmit={ this.handleSubmit }>
+                        <div className="row d-flex justify-content-center mb-3">
+                            
+                            <div className="col-sm-4 form-floating">
 
-                    <label htmlFor="description">Description</label>
-                    <input type="text" id="description" name="description" onChange={this.handleChange} value={this.state.description} />
+                                <input className="form-control" type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} />
+                                <label className="form-label px-3" htmlFor="name">Subtask Name:</label>
 
-                    {/* <label htmlFor="completed">Completed?</label>
-                    <input type="checkbox" id="completed" name="completed" onChange={this.handleChange} /> */}
+                            </div>
+                                
+                            <div className="col-sm-6 form-floating">
+                                
+                                <input className="form-control" type="text" id="description" name="description" onChange={this.handleChange} value={this.state.description} />
+                                <label className="form-label px-3" htmlFor="description">Description:</label>
 
-                    <input type="submit" />
-                </form>
+                            </div>
+
+                            {/* <label htmlFor="completed">Completed?</label>
+                            <input type="checkbox" id="completed" name="completed" onChange={this.handleChange} /> */}
+                        </div>
+                        <div className="text-center">
+
+                            <input className="btn btn-primary btn-sm" type="submit" value="Add Subtask" />
+                            
+                        </div>
+                    </form>
                 </div>
             </div>
         )
