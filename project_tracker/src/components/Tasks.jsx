@@ -43,16 +43,16 @@ export default class Tasks extends Component {
             <div className="container">
                 <div key={this.props.task._id}>
                     <div className="main-task row">
-                        <div className="col-md-10">
+                        <div className="col-md-10 mt-3">
                             <div className="row my-3 d-flex justify-content-center">
-                                <h3 className="col-md-6">{this.props.task.name}</h3>
-                                <h3 className="col-md-4">{this.props.task.dueDate}</h3>
+                                <h3 className="col-6">{this.props.task.name}</h3>
+                                <h3 className="col-4">{this.props.task.dueDate}</h3>
                             </div>
                             <div className="row my-3 d-flex justify-content-center">
-                                <h3 className="col-md-10">{this.props.task.description}</h3>    
+                                <h3 className="col-10">{this.props.task.description}</h3>    
                             </div>
                         </div>
-                        <div className="col d-flex align-items-center">
+                        <div className="col-1 d-flex align-items-center">
                             <button className="btn btn-danger btn-lg" onClick={(event) => {this.props.deleteTask(this.props.task._id)}}>X</button>
                         </div>
                     </div>
