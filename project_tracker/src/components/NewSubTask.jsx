@@ -83,7 +83,7 @@ export default class NewSubTask extends Component {
                         <div className="text-center">
 
                             <input className="btn btn-primary btn-sm" type="submit" value="Add Subtask" />
-                            
+
                         </div>
                     </form>
                 </div>
