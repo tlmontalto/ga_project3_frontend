@@ -21,7 +21,7 @@ export default class NewSubTask extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={ this.handleSubmit }>
                     <label htmlFor="name">Name</label>
                     <input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} />
 
