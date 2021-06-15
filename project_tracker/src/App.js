@@ -63,7 +63,7 @@ export default class App extends Component {
               <div key={task._id}>
                 <h3>{task.name}</h3>
                 {/* Why does it only work with dateDue when in every other spot it is dueDate? */}
-                <h3>{task.dateDue}</h3>
+                <h3>{task.dueDate}</h3>
                 <h3>{task.description}</h3>
                 < Tasks />
               </div>
