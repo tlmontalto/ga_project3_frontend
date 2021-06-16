@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NewTask from './components/NewTask'
 import Tasks from './components/Tasks'
+import AffirmationsApi from './components/AffirmationsApi'
 
 
 let baseURL;
@@ -63,6 +64,10 @@ export default class App extends Component {
     return (
       <div>
         Welcome to the Project 3 Tracking App
+
+        <div>
+          {/* < AffirmationsApi /> */}
+        </div>
 
         < NewTask handleAddTask={ this.handleAddTask } />
 

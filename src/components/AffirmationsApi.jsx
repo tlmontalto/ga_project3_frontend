@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class affirmationsApi extends Component {
+export default class AffirmationsApi extends Component {
     constructor(props) {
         super(props)
 
@@ -23,8 +23,8 @@ export default class affirmationsApi extends Component {
 
     componentDidMount() {
         const url = 'https://www.affirmations.dev/'
-        const response = await fetch(url)
-        const data = await response.json()
+        const response = fetch(url)
+        const data = response.json()
         this.setState({affirmation: data})
         console.log(data);
     }
