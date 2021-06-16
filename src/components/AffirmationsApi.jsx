@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class affirmationsApi extends Component {
+export default class AffirmationsApi extends Component {
     constructor(props) {
         super(props)
 
@@ -10,33 +10,35 @@ export default class affirmationsApi extends Component {
         }
     }
 
-    // getAffirmation = () => {
-    //     fetch('https://www.affirmations.dev/')
-    //     .then(res => res.json())
-    //     .then(json => {
-    //         this.setState({
-    //             isLoaded: true,
-    //             affirmation: json,
-    //         })
-    //     })
-    // }
+    getAffirmation = () => {
+        fetch('https://www.affirmations.dev/')
+        .then(res => res.json())
+        .then(json => {
+            this.setState({
+                isLoaded: true,
+                affirmation: json,
+            })
+        })
+    }
 
     componentDidMount() {
-        const url = 'https://www.affirmations.dev/'
-        const response = await fetch(url)
-        const data = await response.json()
-        this.setState({affirmation: data})
-        console.log(data);
+        this.getAffirmation()
     }
 
     render() {
+
+        // let { isLoaded, affirmation } = this.state
+
         return (
             <div>
-                {this.state.isLoaded || !this.state.affirmation ? (
-                    <div>Loading...</div>
-                ) : (
-                    <div>{this.state.affirmation}</div>
-                    )}
+                <div>
+                    {this.state.isLoaded || !this.state.affirmation ? (
+                        <div>Loading...</div>
+                    ) : (
+                        <div>{this.state.affirmation}</div>
+                        )}
+                </div>
+                {/* data has been loaded */}
             </div>
         )
     }
