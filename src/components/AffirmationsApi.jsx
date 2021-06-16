@@ -24,7 +24,8 @@ export default class AffirmationsApi extends Component {
     componentDidMount() {
         const url = 'https://www.affirmations.dev/'
         const response = fetch(url)
-        const data = response.json()
+        const response = await fetch(url)
+        const data = await response.json()
         this.setState({affirmation: data})
         console.log(data);
     }
