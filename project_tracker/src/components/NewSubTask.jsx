@@ -36,8 +36,8 @@ export default class NewSubTask extends Component {
         fetch(baseURL + '/tasks/' + tasks, {
           method:'PUT',
           body: JSON.stringify({
-            name: tasks.name,
-            description: tasks.description
+            name: this.state.name,
+            description: this.state.description
           }),
           headers: {'Content-Type' : 'application/json'}
         })
