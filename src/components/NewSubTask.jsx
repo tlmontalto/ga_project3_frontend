@@ -50,7 +50,11 @@ export default class NewSubTask extends Component {
           console.log(findIndex)
         //   copyTasks[findIndex].subTask.name = this.state.name
         //   copyTasks[findIndex].description = resJson.description
-          this.setState({tasks: copyTasks})
+          this.setState({
+                tasks: copyTasks,
+                name: '',
+                description: ''
+            })
         })
     
         this.setState({ showUpdate: false })

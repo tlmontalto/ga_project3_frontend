@@ -59,8 +59,8 @@ export default class Tasks extends Component {
                     
                     < NewSubTask id={this.props.task._id} />
                     <div className="sub-list">
-                        { this.props.task.subTask.map(subtask => {
-                            return (< SubTask subtask={subtask}  />)
+                        { this.props.task.subTask.map((subtask, key) => {
+                            return (< SubTask subtaskName={subtask.name} subtaskDesc={subtask.description} key={key} />)
                         })}
                     </div>
                     

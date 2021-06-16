@@ -4,7 +4,7 @@ export default class SubTask extends Component {
     render() {
         return (
             <li>
-                This is a sub-task
+                {this.props.subtaskName}: {this.props.subtaskDesc}
             </li>
         )
     }
