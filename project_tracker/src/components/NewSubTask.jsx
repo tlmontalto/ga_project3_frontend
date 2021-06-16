@@ -58,7 +58,6 @@ export default class NewSubTask extends Component {
 
     render() {
         return (
-            <div className="container">
                 <div className="form-group">
                     <form onSubmit={(event) => this.updateSubTasks(event, this.props.id) }>
                         <div className="row d-flex justify-content-center mb-3">
@@ -87,7 +86,6 @@ export default class NewSubTask extends Component {
                         </div>
                     </form>
                 </div>
-            </div>
         )
     }
 }
