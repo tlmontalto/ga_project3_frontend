@@ -33,7 +33,7 @@ export default class NewSubTask extends Component {
     updateSubTasks = (e, tasks) => {
         e.preventDefault()
         console.log('this is before fetch ' + tasks)
-        fetch(baseURL + '/tasks/' + tasks, {
+        fetch(`${baseURL}/tasks/${tasks}/update`, {
           method:'PUT',
           body: JSON.stringify({
             name: this.state.name,
@@ -45,10 +45,10 @@ export default class NewSubTask extends Component {
         .then(resJson => {
           const copyTasks = [...this.state.tasks];
           const findIndex = this.state.tasks.findIndex(tasks => tasks._id === this.props.id)
+          console.log(resJson)
           console.log(copyTasks)
           console.log(findIndex)
         //   copyTasks[findIndex].subTask.name = this.state.name
-        //   copyTasks[findIndex].subTask.dueDate = this.state.dueDate
         //   copyTasks[findIndex].description = resJson.description
           this.setState({tasks: copyTasks})
         })
