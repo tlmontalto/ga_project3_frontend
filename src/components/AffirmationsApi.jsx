@@ -11,12 +11,13 @@ export default class AffirmationsApi extends Component {
     }
 
     getAffirmation = () => {
-        fetch('https://www.affirmations.dev/')
+        fetch('http://localhost:3003/affirmations')
+            // .then((res) => {console.log(res)})
         .then(res => res.json())
         .then(json => {
             this.setState({
                 isLoaded: true,
-                affirmation: json,
+                affirmation: json.affirmation,
             })
         })
     }
@@ -32,7 +33,7 @@ export default class AffirmationsApi extends Component {
         return (
             <div>
                 <div>
-                    {this.state.isLoaded || !this.state.affirmation ? (
+                    {!this.state.affirmation ? (
                         <div>Loading...</div>
                     ) : (
                         <div>{this.state.affirmation}</div>
