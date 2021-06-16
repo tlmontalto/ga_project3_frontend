@@ -66,7 +66,7 @@ export default class App extends Component {
         Welcome to the Project 3 Tracking App
 
         <div>
-          {/* < AffirmationsApi /> */}
+          < AffirmationsApi />
         </div>
 
         < NewTask handleAddTask={ this.handleAddTask } />
