@@ -32,7 +32,7 @@ export default class NewSubTask extends Component {
     
     updateSubTasks = (e, tasks) => {
         e.preventDefault()
-        console.log('this is before fetch ' + tasks)
+        console.log('this is id for mongo: ' + tasks)
         fetch(`${baseURL}/tasks/${tasks}/update`, {
           method:'PUT',
           body: JSON.stringify({
