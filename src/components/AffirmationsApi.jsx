@@ -15,7 +15,7 @@ export default class AffirmationsApi extends Component {
         .then(res => res.json())
         .then(json => {
             this.setState({
-                isLoaded: false,
+                isLoaded: true,
                 affirmation: json,
             })
         })
