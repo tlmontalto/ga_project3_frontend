@@ -6,3 +6,8 @@ body {
 .form-group {
   color: black;
 }
+
+h3 {
+  color: firebrick;
+  text-align: center;
+}

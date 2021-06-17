@@ -32,14 +32,15 @@ export default class AffirmationsApi extends Component {
 
         return (
             <div>
-                <div>
-                    {!this.state.affirmation ? (
-                        <div>Loading...</div>
-                    ) : (
-                        <div>{this.state.affirmation}</div>
-                        )}
+                <div className="card" >
+                        <div className="card-title" >
+                            <h3>{this.state.affirmation}</h3>
+                        </div>
+                        <div className="card-footer text-end">
+                            <button onClick={() => {this.getAffirmation()}} >New Affirmation</button>
+                        </div>
                 </div>
-                {/* data has been loaded */}
+                
             </div>
         )
     }
