@@ -30,8 +30,8 @@ export default class AffirmationsApi extends Component {
         return (
             <div>
                 <div className="card" >
-                        <div className="card-title" >
-                            <h3>{this.state.affirmation}</h3>
+                        <div className="affirmation card-title text-center" >
+                            <h4>{this.state.affirmation}</h4>
                         </div>
                         <div className="card-footer text-end">
                             <button onClick={() => {this.getAffirmation()}} >New Affirmation</button>

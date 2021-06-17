@@ -7,7 +7,6 @@ body {
   color: black;
 }
 
-h3 {
+.affirmation {
   color: firebrick;
-  text-align: center;
 }
