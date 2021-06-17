@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
 
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:3003';
+} else {
+  baseURL = 'https://task-project3-backend.herokuapp.com/';
+}
+
+console.log('current base URL:', baseURL)
 export default class AffirmationsApi extends Component {
     constructor(props) {
         super(props)
@@ -11,8 +20,7 @@ export default class AffirmationsApi extends Component {
     }
 
     getAffirmation = () => {
-        fetch('http://localhost:3003/affirmations')
-            // .then((res) => {console.log(res)})
+        fetch(`${baseURL}/affirmations`)
         .then(res => res.json())
         .then(json => {
             this.setState({
