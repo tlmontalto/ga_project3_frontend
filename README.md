@@ -22,5 +22,5 @@ This is the front end portion of a Task tracking App built using React.js as par
 - Ability to delete subtasks
 - Filtering by date of tasks
 
-### Task Tracker
+### Project Tracker
 https://docs.google.com/spreadsheets/d/1UcmS4hrt5x3Pzy5h0vXURY2ohGK3N1Ze2p3vh_2sK4c/edit?usp=sharing
