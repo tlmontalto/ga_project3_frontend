@@ -57,7 +57,7 @@ export default class Tasks extends Component {
                         </div>
                     </div>
                     
-                    <div className="sub-list">
+                    <div className="sub-list text-center mb-3 fs-5">
                         { this.props.task.subTask.map((subtask, key) => {
                             return (< SubTask subtaskName={subtask.name} subtaskDesc={subtask.description} key={key} />)
                         })}
