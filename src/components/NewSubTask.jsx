@@ -10,7 +10,6 @@ export default class NewSubTask extends Component {
             name: '',
             description: '',
             completed: false,
-            
         }
     }
 
@@ -27,10 +26,8 @@ export default class NewSubTask extends Component {
     handleChange = (event) => {
         this.setState({ [event.currentTarget.id]: event.currentTarget.value })
     }
-
-    // handleSubmit method will go here.  It needs to connect to the object of the Task it appears on, send a fetch to that object to create a new object within the subtask Array.
     
-    updateSubTasks = (e, tasks) => {
+    addSubTask = (e, tasks) => {
         e.preventDefault()
         console.log('this is id for mongo: ' + tasks)
         fetch(`${baseURL}/tasks/${tasks}/update`, {
@@ -63,7 +60,7 @@ export default class NewSubTask extends Component {
     render() {
         return (
                 <div className="form-group">
-                    <form onSubmit={(event) => this.updateSubTasks(event, this.props.id) }>
+                    <form onSubmit={(event) => this.addSubTask(event, this.props.id) }>
                         <div className="row d-flex justify-content-center mb-3">
                             
                             <div className="col-sm-4 form-floating">
@@ -80,8 +77,6 @@ export default class NewSubTask extends Component {
 
                             </div>
 
-                            {/* <label htmlFor="completed">Completed?</label>
-                            <input type="checkbox" id="completed" name="completed" onChange={this.handleChange} /> */}
                         </div>
                         <div className="text-center">
 

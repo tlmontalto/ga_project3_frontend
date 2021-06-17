@@ -26,6 +26,7 @@ export default class Tasks extends Component {
         // this.setState({ subtasks: this.task.subTask })
     }
 
+    // Currently unused but could be utilized for future functionality
     deleteSubTask = (subtask) => {
         fetch(baseURL + '/tasks/' + this.props.task._id, {
           method: 'PUT',
@@ -70,7 +71,6 @@ export default class Tasks extends Component {
                         < NewSubTask id={this.props.task._id} />
                     </div>
                     
-
                 </div>
             </div>
         )
