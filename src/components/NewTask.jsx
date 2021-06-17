@@ -53,28 +53,29 @@ export default class NewTask extends Component {
         return (
             <div className="form-group">
                 <form onSubmit={ this.handleSubmit }>
-                    <div className="row d-flex justify-content-center my-3">
-                        <div className="col-md-6 form-floating">
-                            <input className="form-control" type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} />
-                            <label className="form-label px-3" htmlFor="name">Name:</label>
-                        </div>
+                    <div>
+                        <div className="row d-flex justify-content-center my-3">
+                            <div className="col-md-6 form-floating">
+                                <input className="form-control" type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name} />
+                                <label className="form-label px-3" htmlFor="name">Name:</label>
+                            </div>
 
-                        <div className="col-md-4 form-floating">
-                            <input className="form-control" type="date" id="dueDate" name="dueDate" onChange={this.handleChange} value={this.state.dueDate} />
-                            <label className="form-label px-3" htmlFor="dueDate">Due Date:</label>
+                            <div className="col-md-4 form-floating">
+                                <input className="form-control" type="date" id="dueDate" name="dueDate" onChange={this.handleChange} value={this.state.dueDate} />
+                                <label className="form-label px-3" htmlFor="dueDate">Due Date:</label>
+                            </div>
+                        </div>
+                        <div className="subtask-input row d-flex justify-content-center mb-3">
+                            <div className="col-md-10 form-floating">
+                                <input className="form-control" type="text" id="description" name="description" onChange={this.handleChange} value={this.state.description} />
+                                <label className="form-label px-3" htmlFor="description">Description:</label>
+                            </div>
+                        </div>
+                        
+                        <div className="text-center">
+                            <input className="btn btn-primary" type="submit" value="Add Task"/>
                         </div>
                     </div>
-                    <div className="row d-flex justify-content-center mb-3">
-                        <div className="col-md-10 form-floating">
-                            <input className="form-control" type="text" id="description" name="description" onChange={this.handleChange} value={this.state.description} />
-                            <label className="form-label px-3" htmlFor="description">Description:</label>
-                        </div>
-                    </div>
-                    
-                    <div className="text-center">
-                        <input className="btn btn-primary" type="submit" value="Add Task"/>
-                    </div>
-        
 
                 </form>
             </div>

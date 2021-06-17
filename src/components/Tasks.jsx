@@ -85,35 +85,40 @@ export default class Tasks extends Component {
     render() {
         return (
 
-                <div key={this.props.task._id}>
+                <div className="one-task card" key={this.props.task._id}>
                     <div className="main-task row">
-                        <div className="col-md-10 mt-3">
-                            <div className="row my-3 d-flex justify-content-center">
+                    <div className="card-header text-end">
+                            <button className="btn btn-danger btn-md" onClick={(event) => {this.props.deleteTask(this.state.task._id)}}>X</button>
+                        </div>
+                        <div className="card-body col-md-10 mt-3">
+
+                            <div className="d-flex justify-content-center card-title">
                                 <p className="col-6 fs-4">{this.state.task.name}</p>
                                 <p className="col-4 fs-4">{this.state.task.dueDate}</p>
                             </div>
-                            <div className="row my-3 d-flex justify-content-center">
+
+                            <div className="d-flex justify-content-center">
                                 <p className="col-10 fs-4">{this.state.task.description}</p>    
                             </div>
+
                         </div>
-                        <div className="col-1 d-flex align-items-center">
-                            <button className="btn btn-danger btn-lg" onClick={(event) => {this.props.deleteTask(this.state.task._id)}}>X</button>
-                        </div>
+                   
                     </div>
                     
-                    <div className="sub-list text-center mb-3 fs-5">
-                        { this.state.task.subTask && this.state.task.subTask.map((subtask, key) => {
-                            return (< SubTask subtaskName={subtask.name} subtaskDesc={subtask.description} key={key} />)
-                        })}
+                    <div className="sub-list list-group mb-3 mx-3 px-2 fs-5">
+                        <ul>
+                            { this.state.task.subTask && this.state.task.subTask.map((subtask, key) => {
+                                return (< SubTask subtaskName={subtask.name} subtaskDesc={subtask.description} key={key} />)
+                            })}
+                        </ul>
                     </div>
 
-                    <div className="mb-3">
                         {/* < NewSubTask id={this.props.task._id} /> */}
-                            <div className="form-group">
+                            <div className="card-footer d-flex column-nowrap form-group">
                             <form onSubmit={(event) => this.addSubTask(event, this.state.task._id) }>
-                                <div className="row d-flex justify-content-center mb-3">
+                                <div className="mb-3">
                                 
-                                    <div className="col-sm-4 form-floating">
+                                    <div className="form-floating mb-2">
 
                                         <input 
                                             className="form-control" 
@@ -130,7 +135,7 @@ export default class Tasks extends Component {
 
                                     </div>
                                     
-                                    <div className="col-sm-6 form-floating">
+                                    <div className="form-floating">
                                         
                                         <input 
                                             className="form-control" 
@@ -159,7 +164,6 @@ export default class Tasks extends Component {
 
                                 </div>
                             </form>
-                    </div>
                     </div>
                     
                 </div>
