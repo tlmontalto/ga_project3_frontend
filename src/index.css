@@ -70,3 +70,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
 }
+
+li {
+  list-style-type: none;
+}
