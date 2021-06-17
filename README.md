@@ -30,6 +30,6 @@ https://docs.google.com/spreadsheets/d/1UcmS4hrt5x3Pzy5h0vXURY2ohGK3N1Ze2p3vh_2s
 
 ### Wireframes
 
-![wireframe1](assets\images\ProjectWifeframe.PNG)
+![wireframe1](assets/images/ProjectWireframe.PNG)
 
 ![wireframe1](assets\images\ProjectWifeframe2.PNG)
