@@ -51,7 +51,6 @@ export default class NewTask extends Component {
 
     render() {
         return (
-            <div className="container">
             <div className="form-group">
                 <form onSubmit={ this.handleSubmit }>
                     <div className="row d-flex justify-content-center my-3">
@@ -71,13 +70,13 @@ export default class NewTask extends Component {
                             <label className="form-label px-3" htmlFor="description">Description:</label>
                         </div>
                     </div>
-
+                    
                     <div className="text-center">
                         <input className="btn btn-primary" type="submit" value="Add Task"/>
                     </div>
+        
 
                 </form>
-            </div>
             </div>
         )
     }

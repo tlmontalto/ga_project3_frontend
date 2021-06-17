@@ -52,7 +52,7 @@ export default class Tasks extends Component {
 
     render() {
         return (
-            <div className="container">
+
                 <div key={this.props.task._id}>
                     <div className="main-task row">
                         <div className="col-md-10 mt-3">
@@ -80,7 +80,7 @@ export default class Tasks extends Component {
                     </div>
                     
                 </div>
-            </div>
+
         )
     }
 }
