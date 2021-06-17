@@ -27,9 +27,6 @@ export default class AffirmationsApi extends Component {
     }
 
     render() {
-
-        // let { isLoaded, affirmation } = this.state
-
         return (
             <div>
                 <div className="card" >

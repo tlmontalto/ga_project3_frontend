@@ -14,15 +14,19 @@ export default class Tasks extends Component {
     }
 
     getSubTasks = () => {
-        fetch(baseURL + '/tasks/' + this.props.task._id)
-          .then(data => {return data.json()}, err => console.log(err))
-          .then(parsedData => this.setState({ subtasks: parsedData.subTask }), err => console.log(err))
+        fetch(`${baseURL}/tasks/${this.props.task._id}`, {
+            method: 'GET'
+        }).then(data => {
+            return data.json()}, err => console.log(err))
+          .then(parsedData => this.setState({ task: parsedData }), err => console.log(err))
     }
 
     componentDidMount() {
         this.getSubTasks()
+        // this.setState({ subtasks: this.task.subTask })
     }
 
+    // Currently unused but could be utilized for future functionality
     deleteSubTask = (subtask) => {
         fetch(baseURL + '/tasks/' + this.props.task._id, {
           method: 'PUT',
@@ -67,7 +71,6 @@ export default class Tasks extends Component {
                         < NewSubTask id={this.props.task._id} />
                     </div>
                     
-
                 </div>
             </div>
         )

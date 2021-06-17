@@ -3,7 +3,6 @@ import NewTask from './components/NewTask'
 import Tasks from './components/Tasks'
 import AffirmationsApi from './components/AffirmationsApi'
 
-
 let baseURL;
 
 if (process.env.NODE_ENV === 'development') {
@@ -58,15 +57,12 @@ export default class App extends Component {
     })
   }
 
-  
-
   render() {
     return (
       <div className="container">
         <div className="header text-center text-decoration-underline">
           <h1>Welcome to the Project 3 Tracking App</h1>
         </div>
-        
 
         <div className="affirmation text-center">
           <h4>< AffirmationsApi /></h4>
@@ -81,7 +77,6 @@ export default class App extends Component {
           )})}
           
         </div>
-        
       </div>
     )
   }
