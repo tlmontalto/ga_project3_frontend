@@ -36,17 +36,12 @@ export default class AffirmationsApi extends Component {
 
     render() {
         return (
-            <div>
-                <div className="card" >
-                        <div className="affirmation card-title text-center" >
+                <div className="d-flex row-nowrap">
+                        <div className="affirmation-text" >
                             <h4>{this.state.affirmation}</h4>
                         </div>
-                        <div className="card-footer text-end">
-                            <button onClick={() => {this.getAffirmation()}} >New Affirmation</button>
-                        </div>
+                            <button className="affirmation-button" onClick={() => {this.getAffirmation()}} >New Affirmation</button>
                 </div>
-                
-            </div>
         )
     }
 }

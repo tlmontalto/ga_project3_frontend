@@ -59,15 +59,19 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="header text-center text-decoration-underline">
-          <h1>Welcome to the Project 3 Tracking App</h1>
-        </div>
+        <div className="top">
+          <div className="header text-center text-decoration-underline">
+            <h1>Welcome to the Project 3 Tracking App</h1>
+          </div>
 
-        <div className="text-center">
-          < AffirmationsApi />
+          <div className="affirmation text-center">
+            < AffirmationsApi />
+          </div>  
         </div>
 
         < NewTask handleAddTask={ this.handleAddTask } />
+        
+
 
         <div className="task-board">
           { this.state.tasks.map(task => {

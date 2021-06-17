@@ -1,12 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 body {
   background-color: #292A2D;
   color: white;
+  padding: 1em;
 }
 
 .form-group {
   color: black;
 }
 
-.affirmation {
+.top {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.affirmation{
+  border: 1px solid white;
+  /* width: 80%; */
+  /* height: 200%; */
+  align-items: center;
+  /* align-content: center; */
+  /* flex-flow: row nowrap; */
+}
+.affirmation-text {
+  align-items: center;
+  justify-content: center;
   color: firebrick;
+  width: 90%;
+  padding: 1em;
+}
+
+.affirmation-button {
+  padding: 1em;
+  line-height: 100%;
+}
+
+.add-task {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.name-date {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.task-board {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  /* max-width: 80%; */
+}
+
+.one-task {
+  flex-flow: column nowrap;
+  /* border: 1px solid yellow; */
+  background-color: #FBE364;
+  color: black;
+  box-shadow: 3px 3px 3px 3px gray;
+  padding: 0 1em;
+  margin: 2em;
+  width: 40%;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.card-footer {
+  display: flex;
+  flex-flow: column nowrap;
 }
