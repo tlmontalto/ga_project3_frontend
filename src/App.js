@@ -8,8 +8,7 @@ let baseURL;
 if (process.env.NODE_ENV === 'development') {
   baseURL = 'http://localhost:3003';
 } else {
-  // "https://fathomless-sierra-68956.herokuapp.com" in this case is the *API* url
-  baseURL = 'https://thawing-oasis-06285.herokuapp.com/';
+  baseURL = 'https://task-project3-backend.herokuapp.com/';
 }
 
 console.log('current base URL:', baseURL)
