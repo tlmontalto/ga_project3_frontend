@@ -17,11 +17,12 @@ export default class Tasks extends Component {
         super(props)
 
         this.state = {
+            task: {},
             subtasks: []
         }
     }
 
-    getSubTasks = () => {
+    getTaskInfo = () => {
         fetch(`${baseURL}/tasks/${this.props.task._id}`, {
             method: 'GET'
         }).then(data => {
@@ -30,25 +31,25 @@ export default class Tasks extends Component {
     }
 
     componentDidMount() {
-        this.getSubTasks()
-        // this.setState({ subtasks: this.task.subTask })
+        this.getTaskInfo()
+        this.setState({ subtasks: this.state.task.subTask })
     }
 
     // Currently unused but could be utilized for future functionality
-    deleteSubTask = (subtask) => {
-        fetch(baseURL + '/tasks/' + this.props.task._id, {
-          method: 'PUT',
-          body: JSON.stringify({ subTask: this.props.task.subTask }),
-          headers: { 'Content-Type': 'application/json'}
-        }).then(res => {
-          if (res.status === 200) {
-            const findIndex = this.props.tasks.findIndex(subtask => this.props.task.subTask === subtask)
-            const copySubTasks = [...this.props.task.subTask]
-            copySubTasks.splice(findIndex, 1)
-            this.setState({ subtasks: copySubTasks })
-          }
-        })
-    }
+    // deleteSubTask = (subtask) => {
+    //     fetch(baseURL + '/tasks/' + this.props.task._id, {
+    //       method: 'PUT',
+    //       body: JSON.stringify({ subTask: this.props.task.subTask }),
+    //       headers: { 'Content-Type': 'application/json'}
+    //     }).then(res => {
+    //       if (res.status === 200) {
+    //         const findIndex = this.props.tasks.findIndex(subtask => this.props.task.subTask === subtask)
+    //         const copySubTasks = [...this.props.task.subTask]
+    //         copySubTasks.splice(findIndex, 1)
+    //         this.setState({ subtasks: copySubTasks })
+    //       }
+    //     })
+    // }
 
     render() {
         return (
@@ -57,11 +58,11 @@ export default class Tasks extends Component {
                     <div className="main-task row">
                         <div className="col-md-10 mt-3">
                             <div className="row my-3 d-flex justify-content-center">
-                                <p className="col-6 fs-4">{this.props.task.name}</p>
-                                <p className="col-4 fs-4">{this.props.task.dueDate}</p>
+                                <p className="col-6 fs-4">{this.state.task.name}</p>
+                                <p className="col-4 fs-4">{this.state.task.dueDate}</p>
                             </div>
                             <div className="row my-3 d-flex justify-content-center">
-                                <p className="col-10 fs-4">{this.props.task.description}</p>    
+                                <p className="col-10 fs-4">{this.state.task.description}</p>    
                             </div>
                         </div>
                         <div className="col-1 d-flex align-items-center">
