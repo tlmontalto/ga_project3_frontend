@@ -27,3 +27,9 @@ https://task-project3-frontend.herokuapp.com/
 
 ### Project Tracker
 https://docs.google.com/spreadsheets/d/1UcmS4hrt5x3Pzy5h0vXURY2ohGK3N1Ze2p3vh_2sK4c/edit?usp=sharing
+
+### Wireframes
+
+![wireframe1](./assets/images/ProjectWireframe.PNG)
+
+![wireframe1](./assets/images/ProjectWireframe2.PNG)
